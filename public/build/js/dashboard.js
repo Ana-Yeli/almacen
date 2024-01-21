@@ -1,0 +1,1 @@
+let nav="dashboard";function iniciarApp(){tabs()}function mostrarPagina(){const n=document.querySelector(`[data-nav="${n}"]`);n.classList.add("active")}function tabs(){document.querySelectorAll(".nav li").forEach(n=>{n.addEventListener("click",(function(n){mostrarPagina()}))})}document.addEventListener("DOMContentLoaded",(function(){iniciarApp()}));
