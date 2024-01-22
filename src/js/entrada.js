@@ -39,8 +39,8 @@ function iniciarApp() {
 async function consultarAPI() {
   try {
     
-    const urlproveedor = "/api/proveedor";
-    const urlproducto = "/api/productos";    
+    const urlproveedor = `${location.origin}/api/proveedor`;
+    const urlproducto =  `${location.origin}/api/productos`;    
     
     const resultprov = await fetch(urlproveedor);
     const resultprod = await fetch(urlproducto);
@@ -453,7 +453,7 @@ async function crearEntrada(){
     datos.append("total_descuento", totaldescuento)
     datos.append("estatus", estatus);
 
-    const url = '/api/crear-entrada';
+    const url = `${location.origin}/api/crear-entrada`;
     const respuesta = await fetch(url, {
       method: "POST",
       body: datos,
@@ -502,7 +502,7 @@ async function crear_entrada_producto(id_entrada) {
     datos.append("importe_c_iva", importeCiva);
     datos.append("precio_sugerido", precio_sugerido);
 
-    const url = '/api/crear-entrada_producto';
+    const url = `${location.origin}/api/crear-entrada_producto`;
     const respuesta = await fetch(url, {
       method: "POST",
       body: datos,

@@ -17,10 +17,10 @@ function iniciarApp(){
 
 async function consultarAPI(){
     try{
-        const urlcategoria = "/api/categoria";
-        const urlmarca = "/api/marca";   
-        const urlp_tipo = "/api/producto_tipo"; 
-        const url_p_join = "/api/productos";    
+        const urlcategoria =`${location.origin}/api/categoria`;
+        const urlmarca =    `${location.origin}/api/marca`;   
+        const urlp_tipo =   `${location.origin}/api/producto_tipo`; 
+        const url_p_join =  `${location.origin}/api/productos`;    
 
         const resulcat = await fetch(urlcategoria);
         const resulmarc = await fetch(urlmarca);
@@ -330,7 +330,7 @@ $('#modalSignin').on('hidden.bs.modal', function () {
 
 async function eliminar_producto(id){
 
-    const url = '/api/eliminar-producto';
+    const url = `${location.origin}/api/eliminar-producto`;
 
     const respuesta = await fetch(url, {
       method: "POST",
@@ -379,7 +379,7 @@ async function eliminar_producto(id){
 }
 
 async function actualizar_producto(id){
-  const url = '/api/actualizar_producto';
+  const url = `${location.origin}/api/actualizar_producto`;
 
   nombre = $('#nombre').val();
   codigo = $('#codigo').val();
@@ -457,7 +457,7 @@ async function crear_producto() {
   datos.append("codigo_barras", codigo);
   datos.append("presentacion", presentacion);
 
-  const url = '/api/crear-producto';
+  const url = `${location.origin}/api/crear-producto`;
   const respuesta = await fetch(url, {
       method: "POST",
       body: datos,

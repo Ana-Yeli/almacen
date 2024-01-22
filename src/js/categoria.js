@@ -7,7 +7,7 @@ function iniciarApp(){
 }
 
 async function consultarAPI(){
-    const urlcategoria = "/api/categoria";
+    const urlcategoria = `${location.origin}/api/categoria`;
 
     const resultcat = await fetch(urlcategoria);
 
@@ -151,7 +151,7 @@ async function crear_categoria() {
     const datos = new FormData();
     datos.append("descripcion", descripcion);
   
-    const url = '/api/crear-categoria';
+    const url = `${location.origin}/api/crear-categoria`;
     const respuesta = await fetch(url, {
         method: "POST",
         body: datos,
@@ -196,7 +196,7 @@ async function crear_categoria() {
 }
 
 async function actualizar_categoria(id){
-    const url = '/api/actualizar_categoria';
+    const url = `${location.origin}/api/actualizar_categoria`;
   
     descripcion = $('#descripcion').val();
   
@@ -249,7 +249,7 @@ async function actualizar_categoria(id){
 
 async function eliminar_categoria(id){
 
-    const url = '/api/eliminar-categoria';
+    const url = `${location.origin}/api/eliminar-categoria`;
 
     const respuesta = await fetch(url, {
         method: "POST",

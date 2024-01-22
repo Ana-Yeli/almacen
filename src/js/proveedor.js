@@ -16,7 +16,7 @@ function iniciarApp(){
 }
 
 async function consultarAPI(){
-    const urlproveedor = "/api/proveedor";
+    const urlproveedor = `${location.origin}/api/proveedor`;
 
     const resultprov = await fetch(urlproveedor);
 
@@ -244,7 +244,7 @@ $('#modalSignin').on('hidden.bs.modal', function () {
     datos.append("telefono", telefono);
     datos.append("correo", correo);
   
-    const url = '/api/crear-proveedor';
+    const url = `${location.origin}/api/crear-proveedor`;
     const respuesta = await fetch(url, {
         method: "POST",
         body: datos,
@@ -289,7 +289,7 @@ $('#modalSignin').on('hidden.bs.modal', function () {
   }
 
   async function actualizar_proveedor(id){
-    const url = '/api/actualizar_proveedor';
+    const url = `${location.origin}/api/actualizar_proveedor`;
   
     nombre_comercial = $('#nombre_comercial').val();
     nombre_fiscal = $('#nombre_fiscal').val();
@@ -353,7 +353,7 @@ $('#modalSignin').on('hidden.bs.modal', function () {
 
   async function eliminar_proveedor(id){
 
-    const url = '/api/eliminar-proveedor';
+    const url = `${location.origin}/api/eliminar-proveedor`;
 
     const respuesta = await fetch(url, {
       method: "POST",

@@ -7,7 +7,7 @@ function iniciarApp(){
 }
 
 async function consultarAPI(){
-    const urlmarca = "/api/marca";
+    const urlmarca = `${location.origin}/api/marca`;
 
     const resultmarca = await fetch(urlmarca);
 
@@ -151,7 +151,7 @@ async function crear_marca() {
     const datos = new FormData();
     datos.append("descripcion", descripcion);
   
-    const url = '/api/crear-marca';
+    const url = `${location.origin}/api/crear-marca`;
     const respuesta = await fetch(url, {
         method: "POST",
         body: datos,
@@ -197,7 +197,7 @@ async function crear_marca() {
 }
 
 async function actualizar_marca(id){
-    const url = '/api/actualizar-marca';
+    const url = `${location.origin}/api/actualizar-marca`;
   
     descripcion = $('#descripcion').val();
   
@@ -251,7 +251,7 @@ async function actualizar_marca(id){
 
 async function eliminar_marca(id){
 
-    const url = '/api/eliminar-marca';
+    const url = `${location.origin}/api/eliminar-marca`;
 
     const respuesta = await fetch(url, {
         method: "POST",

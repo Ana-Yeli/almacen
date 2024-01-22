@@ -1,5 +1,8 @@
-includes/.env
-
-node_modules
-
 /vendor/
+/node_modules/
+.env
+.env.local
+.env.development
+.env.test
+.env.production
+.env.staging

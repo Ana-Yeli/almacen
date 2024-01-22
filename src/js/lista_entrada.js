@@ -21,9 +21,9 @@ function iniciarApp(){
 
 async function consultarAPI(){
     try{
-        const urlentradas = "/api/entradas";
-        const urlproveedor = "/api/proveedor";
-        const urlusuario = "/api/usuario";
+        const urlentradas =  `${location.origin}/api/entradas`;
+        const urlproveedor = `${location.origin}/api/proveedor`;
+        const urlusuario =   `${location.origin}/api/usuario`;
     
         const resultentradas = await fetch(urlentradas);
         const resultprov = await fetch(urlproveedor);
@@ -306,7 +306,7 @@ $(document).on('click', '#modal_action_button', function (event) {
 });
 
 async function actualizar_fac_rem(id){
-    const url = '/api/actualizar-entrada';
+    const url = `${location.origin}/api/actualizar-entrada`;
 
     Proveedor =  $('#proveedor').val();
     Usuario = $('#usuario').val();
@@ -378,7 +378,7 @@ async function actualizar_fac_rem(id){
 
 async function eliminar_fac_rem(id){
 
-    const url = '/api/eliminar-entrada';
+    const url = `${location.origin}/api/eliminar-entrada`;
 
     const respuesta = await fetch(url, {
         method: "POST",
@@ -428,7 +428,7 @@ async function eliminar_fac_rem(id){
 //Productos relacionados a la entrada
 async function mostrarTablaDetalle(id_entrada){
     try {
-        const urlEntradaProductos = `/api/entrada_productos?id_entrada=${id_entrada}`;
+        const urlEntradaProductos = `${location.origin}/api/entrada_productos?id_entrada=${id_entrada}`;
         const resultEntradaProductos = await fetch(urlEntradaProductos);
         const entradaProductos = await resultEntradaProductos.json();
         var tabla = $("#myTableDetail").DataTable();
